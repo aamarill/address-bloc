@@ -41,9 +41,14 @@ class MenuController
 			when 5
 				puts "Good-bye!"
 				exit(0)
+
 			when 6
 				system "clear"
 				view_entry
+			when 7
+				system "clear"
+				nuke
+				main_menu
 			else
 				system "clear"
 				puts "Sorry, that is not valid input"
@@ -197,6 +202,11 @@ class MenuController
 				search_submenu(entry)
 		end
 
+	end
+
+	def nuke
+		address_book.entries.clear
+		puts "All entries have been deleted!"
 	end
 
 end # end of class defintion
